@@ -16,7 +16,7 @@ import {
   reset,
   deleteTaskAction,
 } from "../../redux/Features/tasks/deleteTaskSlice";
-import DOMPurify from "dompurify";
+import { getDate } from "../../components/utils/getDateTime";
 
 const Tasks = () => {
   const dispatch = useDispatch();
@@ -206,6 +206,9 @@ const Tasks = () => {
                   >
                     {truncateText(task.title, 20)}
                   </h2>
+                  <span className="italic text-[12px] text-slate-800">
+                    {getDate(task.createdAt, "MMM DD, YYYY ")}
+                  </span>
 
                   <div
                     className="flex-1 mt-5"
