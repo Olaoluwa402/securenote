@@ -193,7 +193,7 @@ const Tasks = () => {
           {loading ? (
             <Spinner />
           ) : tasks && tasks.length > 0 ? (
-            <div className="my-12 flex flex-wrap">
+            <div className="my-12 flex justify-center md:justify-start flex-wrap">
               {tasks.map((task, i) => (
                 <div
                   key={i}
