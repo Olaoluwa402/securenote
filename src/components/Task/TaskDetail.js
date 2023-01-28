@@ -43,15 +43,15 @@ const TaskDetail = ({ id, closeTaskDetailModalHandler }) => {
           <Loader />
         ) : task ? (
           <div className="w-3/4 mx-auto flex flex-col drop-shadow-md bg-white p-4 my-4">
-            <h2 className="text-center text-[25px] font-bold text-primary font-Urbanist mt-[20px]">
+            <h2 className="text-center break-words text-[25px] font-bold text-primary font-Urbanist mt-[20px]">
               Task Detail
             </h2>
 
             <div className="my-3">
-              <h2>{task.title}</h2>
+              <h2 className="break-words">{task.title}</h2>
 
               <div
-                className="mt-5"
+                className="mt-5 break-words"
                 dangerouslySetInnerHTML={{
                   __html: task.detail,
                 }}

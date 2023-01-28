@@ -200,7 +200,7 @@ const Tasks = () => {
                   className="flex flex-col m-2  w-[230px] h-[280px] p-2 drop-shadow-md rounded-lg bg-orange10"
                 >
                   <h2
-                    className="font-bold uppercase text-[#333] cursor-pointer hover:text-blue200"
+                    className="font-bold break-words uppercase text-[#333] cursor-pointer hover:text-blue200"
                     onClick={() => {
                       setOpenDetail((prev) => !prev);
                       setDetailId(task._id);
@@ -213,7 +213,7 @@ const Tasks = () => {
                   </span>
 
                   <div
-                    className="flex-1 mt-5"
+                    className="flex-1 flex-wrap break-words mt-5"
                     dangerouslySetInnerHTML={{
                       __html: truncateText(task.detail, 200),
                     }}
