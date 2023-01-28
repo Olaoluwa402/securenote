@@ -37,7 +37,7 @@ const createTask = catchAsyncErrors(async (req, res, next) => {
 const getTasks = catchAsyncErrors(async (req, res, next) => {
   const { search } = req.query;
 
-  let tasks = await Task.find({ _id: req.user._id }).sort({ _id: -1 });
+  let tasks = await Task.find({ author: req.user._id }).sort({ _id: -1 });
   if (search !== "undefined") {
     tasks = tasks.filter((item) =>
       item.title.toLowerCase().startsWith(search.toLowerCase())
@@ -103,7 +103,7 @@ const updateTask = catchAsyncErrors(async (req, res, next) => {
 const deleteTask = catchAsyncErrors(async (req, res, next) => {
   const taskId = req.query.id;
   // find task
-  const task = await Task.findById({ author: taskId });
+  const task = await Task.findById({ _id: taskId });
 
   if (!task) {
     return next(new ErrorHandler("No task found", 404));
