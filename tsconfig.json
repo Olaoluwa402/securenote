@@ -15,6 +15,18 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/mvc/config/db.js",
+    "src/pages/api/login/index.js",
+    "src/components/Login/Login.js",
+    "src/components/Login/Form.js",
+    "src/pages/index.js",
+    "src/components/Register/Form.js",
+    "src/components/Register/Register.js",
+    "src/redux/Features/auth/authLoginSlice.js"
+  ],
   "exclude": ["node_modules"]
 }
