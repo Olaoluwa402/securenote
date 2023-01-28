@@ -148,7 +148,7 @@ const Tasks = () => {
           />
         </Modal>
       )}
-      <div className="w-[100%]  sm:w-4/5 mx-auto  mb-10">
+      <div className="w-[100%]  sm:w-4/5 mx-auto  mb-10 overflow-hidden">
         <div className="flex items-center justify-between my-3 bg-white drop-shadow-md rounded-xl p-5 mx-6 md:mx-0">
           <button
             onClick={() => setOpen((prev) => !prev)}

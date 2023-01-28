@@ -37,7 +37,7 @@ const createTask = catchAsyncErrors(async (req, res, next) => {
 const getTasks = catchAsyncErrors(async (req, res, next) => {
   const { search } = req.query;
 
-  let tasks = await Task.find({}).sort({ _id: -1 });
+  let tasks = await Task.find({ _id: req.user._id }).sort({ _id: -1 });
   if (search !== "undefined") {
     tasks = tasks.filter((item) =>
       item.title.toLowerCase().startsWith(search.toLowerCase())
