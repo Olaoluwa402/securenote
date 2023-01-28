@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { MdOutlineClose } from "react-icons/md";
+import { BsShare } from "react-icons/bs";
 import { useRouter } from "next/router";
 import Loader from "../Spinner/Spinner";
+import { RWebShare } from "react-web-share";
 
 import { getTaskAction } from "../../redux/Features/tasks/getTaskDetailSlice";
 
@@ -55,6 +57,19 @@ const TaskDetail = ({ id, closeTaskDetailModalHandler }) => {
                 }}
               ></div>
             </div>
+            <RWebShare
+              data={{
+                text: "Sign up and take advantage of the free and secure note app",
+                url: "https://securenote-9gh1.onrender.com/",
+                title: "secure note app",
+              }}
+              onClick={() => {
+                closeTaskDetailModalHandler;
+                console.log("shared successfully!");
+              }}
+            >
+              <BsShare className=" text-[green] rounded-lg drop-shadow-md cursor-pointer text-[20px]" />
+            </RWebShare>
           </div>
         ) : (
           <h2>No record found</h2>

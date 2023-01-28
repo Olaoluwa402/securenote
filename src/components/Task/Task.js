@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaSearch, FaPaperPlane } from "react-icons/fa";
-import { BsChevronDown, BsFilterSquare, BsTrash } from "react-icons/bs";
+import { BsShare, BsTrash } from "react-icons/bs";
+
 import { MdOutlineEditNote } from "react-icons/md";
 import { useSelector, useDispatch } from "react-redux";
 import Link from "next/link";
@@ -17,6 +18,7 @@ import {
   deleteTaskAction,
 } from "../../redux/Features/tasks/deleteTaskSlice";
 import { getDate } from "../../components/utils/getDateTime";
+import { RWebShare } from "react-web-share";
 
 const Tasks = () => {
   const dispatch = useDispatch();
@@ -159,7 +161,7 @@ const Tasks = () => {
           </p>{" "}
         </div>
 
-        <div className="w-[100%] min-h-[400px]  bg-white drop-shadow-md rounded-xl p-5 mx-6 md:mx-0">
+        <div className="w-[100%] min-h-[480px]  bg-white drop-shadow-md rounded-xl p-5 mx-6 md:mx-0">
           {/* header table */}
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="font-Inter mb-6 md:mb-0 text-[30px] text-primary">
@@ -226,6 +228,21 @@ const Tasks = () => {
                         setOpenEdit((prev) => !prev);
                       }}
                     />
+
+                    <RWebShare
+                      data={{
+                        text: "Sign up and take advantage of the free and secure note app",
+                        url: "https://securenote-9gh1.onrender.com/",
+                        title: "secure note app",
+                      }}
+                      onClick={() => {
+                        closeTaskDetailModalHandler;
+                        console.log("shared successfully!");
+                      }}
+                    >
+                      <BsShare className=" text-[green] rounded-lg drop-shadow-md cursor-pointer text-[20px]" />
+                    </RWebShare>
+
                     {deleteLoading && deleteId == task._id ? (
                       <Spinner />
                     ) : (
