@@ -103,7 +103,7 @@ const updateTask = catchAsyncErrors(async (req, res, next) => {
 const deleteTask = catchAsyncErrors(async (req, res, next) => {
   const taskId = req.query.id;
   // find task
-  const task = await Task.findById({ _id: taskId });
+  const task = await Task.findById({ author: taskId });
 
   if (!task) {
     return next(new ErrorHandler("No task found", 404));
