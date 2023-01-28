@@ -19,8 +19,8 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="w-full p-5 h-screen flex flex-col justify-center items-center bg-primary">
-        <h1 className="text-[50px] text-white font-extrabold uppercase ">
+      <main className="w-[100vw] p-5 h-screen flex flex-col justify-center items-center overflow-hidden bg-primary">
+        <h1 className="text-[30px] md:text-[50px] text-white font-extrabold uppercase ">
           Secure Note
         </h1>
         {active === "login" ? (
